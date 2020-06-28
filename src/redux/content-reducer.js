@@ -16,13 +16,13 @@ let ContentReducer = (state = initialState, action) => {
             }
         }
         case SET_CURRENT_PATH:
-            return {...state, idCurrentPath: action.idCurrentPath}
+            return { ...state, idCurrentPath: action.idCurrentPath }
         default:
             return state;
     }
 }
 
-export const  showFullDescription = (show) => ({type: SHOW_FULL_PATH, show})
-export const setCurrentPath = (idCurrentPath) => ({type: SET_CURRENT_PATH, idCurrentPath})
+export const showFullDescription = (show) => ({ type: SHOW_FULL_PATH, show })
+export const setCurrentPath = (idCurrentPath) => ({ type: SET_CURRENT_PATH, idCurrentPath })
 
 export default ContentReducer

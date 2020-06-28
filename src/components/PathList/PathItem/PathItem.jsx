@@ -3,7 +3,7 @@ import classes from './../PathList.module.css';
 import IconImage from '../../common/IconImage';
 import StarIcon from '../../common/StarIcon';
 
-const PathItem = ({title, shortDescr}) => {
+const PathItem = ({ title, shortDescr }) => {
     return (
         <div className={classes.pathItem}>
             <div className={classes.icon}>
@@ -17,7 +17,7 @@ const PathItem = ({title, shortDescr}) => {
                     <h3>{title}</h3>
                 </div>
                 <div className={classes.shortDescription}>{shortDescr}
-            </div>
+                </div>
             </div>
             <div className={classes.distance}>300m</div>
             <div className={classes.openModal}>

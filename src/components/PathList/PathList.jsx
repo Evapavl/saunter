@@ -5,21 +5,15 @@ import search from './../../img/search.png';
 
 
 const PathList = (props) => {
-  
-//    let  onPathChanged = (pathId) => {
-//        // props.setCurrentPath(pathId);
-//         console.log(pathId)
-//     }
-
 
     let state = props.addPath;
 
-    let shortDescrElements = state.shortDescriptions.map(s => <PathItem onClick={(e) => {
-        debugger
+    let shortDescrElements = state.shortDescriptions.map(s => <PathItem key={`2+${s.id}`} onClick={(e) => {
+
         console.log('aaa')
-       // props.onPathChanged(s.id)
+        // props.onPathChanged(s.id)
     }}
-         title={s.title} key={s.id} shortDescr={s.shortDescr} />);
+        title={s.title} shortDescr={s.shortDescr} />);
 
 
 

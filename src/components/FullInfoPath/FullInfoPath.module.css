@@ -4,8 +4,7 @@
     color:rgb(125, 130, 136);
     font-weight: 500;
 }
-.pathTitle {
-}
+
 .title {
     display: flex;
     flex-direction: row;

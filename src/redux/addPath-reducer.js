@@ -1,39 +1,33 @@
-let ADD_FULL_DESCRIPTION = 'ADD_FULL_DESCRIPTION';
 let ADD_SHORT_DESCRIPTION = 'ADD_SHORT_DESCRIPTION';
+let ADD_FULL_DESCRIPTION = 'ADD_FULL_DESCRIPTION'
 
-let initialState = { 
-    // fullDescriptions: [{id:Date.now().toString(),  title:"fgfg", fullDescr:"kjlgjg"},
-    // {id:Date.now().toString(),  title:"nvnvnv",  fullDescr:"mmmm"}],
+let initialState = {
     shortDescriptions: [
-        // {id:Date.now().toString(),  title:"fgfg", shortDescr:"vbvnnvnv", fullDescr:"kjlgjg"},
-    {id:Date.now().toString(),  title:"nvnvnv", shortDescr:"ssss", fullDescr:"mmmm"}]
-    
+        {
+            id: Date.now().toString(),
+            title: "Title path",
+            shortDescr: "short description"
+        }],
+    fullDescriptions: [
+        {
+            id: Date.now().toString(),
+            title: "Title path",
+            fullDescr: "full description"
+        }]
 }
 
-let addPathReducer = (state =initialState , action) => {
+let addPathReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_FULL_DESCRIPTION: {
-            let newFullDescriptionText = {
-                id:state.id,
-                 title:action.title,
-                 fullDescr:action.fullDescr
-            }
+        case ADD_SHORT_DESCRIPTION: {
             return {
-                ...state, 
-                ...action.newFullDescr
-                //fullDescriptions:[...state.fullDescriptions, newFullDescriptionText]
+                ...state,
+                shortDescriptions: [...state.shortDescriptions, action.newShortDescr]
             }
         }
-        case ADD_SHORT_DESCRIPTION: {
-            let newShortDescriptionText = {
-                id:state.id,
-                 title:action.title,
-                 shortDescr:action.shortDescr
-            }
+        case ADD_FULL_DESCRIPTION: {
             return {
-                ...state, 
-                ...action.newShortDescr
-                //shortDescriptions:[...state.shortDescriptions, newShortDescriptionText]
+                ...state,
+                fullDescriptions: [...state.fullDescriptions, action.newFullDescr]
             }
         }
         default:
@@ -41,7 +35,6 @@ let addPathReducer = (state =initialState , action) => {
     }
 }
 
-export const  sendNewFullDescription = (id, title, fullDescr) => ({type: ADD_FULL_DESCRIPTION, newFullDescr:{id, title, fullDescr}})
-export const  sendNewShortDescription = (id, title, shortDescr, fullDescr) => ({type: ADD_SHORT_DESCRIPTION, newShortDescr:{id, title, shortDescr, fullDescr}})
-
+export const sendNewShortDescription = (id, title, shortDescr) => ({ type: ADD_SHORT_DESCRIPTION, newShortDescr: { id, title, shortDescr } })
+export const sendNewFullDescription = (id, title, fullDescr) => ({ type: ADD_FULL_DESCRIPTION, newFullDescr: { id, title, fullDescr } })
 export default addPathReducer;

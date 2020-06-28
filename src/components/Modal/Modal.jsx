@@ -7,14 +7,9 @@ import { Field, reduxForm } from "redux-form";
 import { maxLengthCreator } from "./../Validate/Validate";
 import Map from './../Map/Map';
 
-
-
-
-
 const maxLength160 = maxLengthCreator(160);
 
 const ModalForm = (props) => {
-    
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={classes.inputTitle}>
@@ -29,7 +24,7 @@ const ModalForm = (props) => {
                 <label>Short description</label>
                 <Field component="textarea"
                     name="shortDescr"
-                     validate={[maxLength160]}
+                    validate={[maxLength160]}
                 />
                 <div className={classes.limitWord}>Limit 9 of 160</div>
             </div>
@@ -53,13 +48,13 @@ const ModalReduxForm = reduxForm({ form: 'addPath' })(ModalForm)
 
 
 
-const ModalWindow = ({ sendNewShortDescription, closeModal, modalIsOpen,  ...props}) => {
+const ModalWindow = ({ sendNewShortDescription, sendNewFullDescription, closeModal, modalIsOpen, ...props }) => {
 
     const addNewDescription = (values) => {
-        
-         sendNewShortDescription(values.id, values.title, values.shortDescr, values.fullDescr)
+        sendNewShortDescription(values.id, values.title, values.shortDescr)
+        sendNewFullDescription(values.id, values.title, values.fullDescr)
     }
-   
+
     return (
         <div>
             <Modal

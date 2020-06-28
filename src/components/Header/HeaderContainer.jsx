@@ -1,24 +1,18 @@
 import React from 'react';
-import {sendNewShortDescription} from "../../redux/addPath-reducer";
-import {connect} from "react-redux";
+import { sendNewShortDescription, sendNewFullDescription } from "../../redux/addPath-reducer";
+import { connect } from "react-redux";
 import Header from './Header';
-
-
 
 let mapStateToProps = (state) => {
     return {
         addPath: state.addPath,
-        fullDescriptions: state.addPath.fullDescriptions,
-        shortDescriptions: state.addPath.shortDescriptions
-    }
-}
-let mapDispatchToProps = (dispatch) => {
-   
-    return {
-        sendNewShortDescription: (id, title, shortDescr, fullDescr) => {
-            dispatch(sendNewShortDescription(id, title, shortDescr, fullDescr));
-        }
+        shortDescriptions: state.addPath.shortDescriptions,
+        fullDescriptions: state.addPath.fullDescriptions
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+
+
+
+const HeaderContainer = connect(mapStateToProps, { sendNewShortDescription, sendNewFullDescription })(Header)
+export default HeaderContainer;

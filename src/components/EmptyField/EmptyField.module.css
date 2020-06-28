@@ -1,0 +1,15 @@
+.emptyField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    opacity: 0.3
+}
+.iconOpacity {
+    width: 65px;
+    display: block;
+}
+.text {
+    text-align: center;
+}

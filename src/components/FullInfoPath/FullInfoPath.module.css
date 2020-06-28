@@ -1,0 +1,29 @@
+.fullInfo {
+    display: flex;
+    flex-direction: column;
+    color:rgb(125, 130, 136);
+    font-weight: 500;
+}
+.pathTitle {
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 22px;
+}
+.fullDiscription{
+    margin-top: 10px;
+}
+.favorites {
+    text-decoration: underline;
+    color:  rgb(36, 36, 236);
+    text-align: right;
+    padding-top: 10px;
+}
+.remove {
+    text-decoration: underline;
+    color: rgb(167, 43, 43);
+    text-align: right;
+    padding-top: 10px;
+}

@@ -1,0 +1,61 @@
+.pathList{
+padding: 10px;
+display: flex;
+flex-direction: column;
+}
+.searchInput {
+    position: relative;
+}
+.searchInput input {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    height: 50px; 
+  line-height: 50px; 
+}
+.searchInput input:focus {
+border-color:dodgerblue;
+box-shadow: 0 0 8px 0 rgb(149, 156, 163);
+}
+.searchInput img {
+width: 24px;
+position: absolute;
+right: 10px;
+top: 10px;
+}
+.pathItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+}
+.icon {
+    width: 10%;
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+.title h3 {
+    padding-left: 15px;
+}
+.star {
+width: 24px;
+display: block;
+}
+.pathInfo {
+    /* padding: 7px; */
+    width: 60%;
+}
+.distance {
+    width: 10%;
+}
+.openModal{
+    width: 5%;
+}

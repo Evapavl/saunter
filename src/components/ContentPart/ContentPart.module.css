@@ -1,0 +1,17 @@
+.leftSide {
+    width: 49%;
+    flex-direction: column;
+    border-right:1px solid #aaa;
+  }
+  .rightSide {
+    width: 49%;
+  }
+
+  .appWrapperContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  

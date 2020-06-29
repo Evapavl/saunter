@@ -2,13 +2,19 @@ import React from 'react';
 import classes from './../PathList.module.css';
 import IconImage from '../../common/IconImage';
 import StarIcon from '../../common/StarIcon';
+import { setCurrentPath } from '../../../redux/content-reducer'
 
-const PathItem = ({ title, shortDescr }) => {
+const PathItem = ({ id, title, shortDescr, ...props }) => {
+    debugger
+    let onPathChanged = (pathId) => {
+        setCurrentPath(pathId);
+       alert(pathId)
+    }
     return (
         <div className={classes.pathItem}
          onClick={(e) => {
-            alert('aaa')
-               // onPathChanged(s.id)
+            //alert('aaa')
+                onPathChanged(id)
            }}>
             <div className={classes.icon}>
                 <IconImage />

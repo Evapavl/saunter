@@ -10,11 +10,17 @@ const ContentPart = (props) => {
     return (
         <div className={classes.appWrapperContent}>
             <div className={classes.leftSide}>
-                <PathListContainer />
+                <PathListContainer
+                    idCurrentPath={props.idCurrentPath}
+                    show={props.show}
+                    showFullDescription={props.showFullDescription}
+                    setCurrentPath={props.setCurrentPath} />
             </div>
             <div className={classes.rightSide}>
-                <FullInfoPathContaiter />
-                {/* <EmptyField /> */}
+                {props.show ? <FullInfoPathContaiter /> :
+                    <EmptyField />
+                }
+
             </div>
         </div>
     )

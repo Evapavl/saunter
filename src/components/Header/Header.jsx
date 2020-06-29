@@ -16,7 +16,7 @@ const Header = (props) => {
   return (
     <div className={classes.header}>
       <div className={classes.leftSide}>
-        <IconImage />
+        <IconImage onClick={()=>{alert('aaac')}}  />
         <span className={classes.logoText}>
           Saunter
           </span>

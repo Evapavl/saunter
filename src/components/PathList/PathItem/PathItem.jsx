@@ -5,7 +5,11 @@ import StarIcon from '../../common/StarIcon';
 
 const PathItem = ({ title, shortDescr }) => {
     return (
-        <div className={classes.pathItem}>
+        <div className={classes.pathItem}
+         onClick={(e) => {
+            alert('aaa')
+               // onPathChanged(s.id)
+           }}>
             <div className={classes.icon}>
                 <IconImage />
             </div>

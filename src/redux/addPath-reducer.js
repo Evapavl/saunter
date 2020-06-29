@@ -1,6 +1,6 @@
 let ADD_SHORT_DESCRIPTION = 'ADD_SHORT_DESCRIPTION';
 let ADD_FULL_DESCRIPTION = 'ADD_FULL_DESCRIPTION'
-let TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS'
+let SHOWING_IS_FOLLOWING_PROGRESS = 'SHOWING_IS_FOLLOWING_PROGRESS'
 let SHOW_FULL_PATH = 'SHOW_FULL_PATH';
 let SET_CURRENT_PATH = 'SET_CURRENT_PATH'
 
@@ -18,7 +18,7 @@ let initialState = {
             fullDescr: "full description"
         }],
     followingInProgress: [],
-    show: false,
+    show: true,
     idCurrentPath: 0,
 }
 
@@ -36,7 +36,7 @@ let addPathReducer = (state = initialState, action) => {
                 fullDescriptions: [...state.fullDescriptions, action.newFullDescr]
             }
         }
-        case TOGGLE_IS_FOLLOWING_PROGRESS:
+        case SHOWING_IS_FOLLOWING_PROGRESS:
             return {
                 ...state,
                 showingInProgress: action.show
@@ -60,8 +60,8 @@ export const sendNewShortDescription = (id, title, shortDescr) => ({ type: ADD_S
 export const sendNewFullDescription = (id, title, fullDescr) => ({ type: ADD_FULL_DESCRIPTION, newFullDescr: { id, title, fullDescr } })
 export const showFullDescription = (show) => ({ type: SHOW_FULL_PATH, show })
 export const setCurrentPath = (idCurrentPath) => ({ type: SET_CURRENT_PATH, idCurrentPath })
-export const toggleIsFollowingProgress = (show, idCurrentPath) => ({
-    type: TOGGLE_IS_FOLLOWING_PROGRESS,
+export const showingIsFollowingProgress = (show, idCurrentPath) => ({
+    type: SHOWING_IS_FOLLOWING_PROGRESS,
     show,
     idCurrentPath
 })
